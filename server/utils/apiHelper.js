@@ -1,0 +1,1 @@
+//Funções auxiliares para chamadas HTTP, tratamento de erros

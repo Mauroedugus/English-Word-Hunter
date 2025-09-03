@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<title>English Word Hunter</title>
+<script src="https://cdn.jsdelivr.net/npm/phaser@3.60.0/dist/phaser.min.js"></script>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<header>
+    <h1>Bem Vindo ao Word Hunter</h1>
+</header>
+<main>
+    <button id="start-btn">Começar</button>
+    <pre id="output"></pre>
+
+    <div id="question"></div>
+    <div id="options">
+        <div id="op1"></div>
+        <div id="op2"></div>
+        <div id="op3"></div>
+    </div>
+</main>
+<script>
+    document.getElementById("start-btn").addEventListener("click", async () => {
+        try {
+            const response = await fetch("http://localhost:3000/api/easy/random-question");
+            const data = await response.json();
+
+            if(data.word) {
+                document.getElementById("question").innerHTML = `<p>${data.word}</p>`;
+                document.getElementById("op1").innerHTML = `<img src="${data.options[0]}" alt="${data.options[0]}" />`;
+                document.getElementById("op2").innerHTML = `<img src="${data.options[1]}" alt="${data.options[1]}" />`;
+                document.getElementById("op3").innerHTML = `<img src="${data.options[2]}" alt="${data.options[2]}" />`;
+                
+            }
+
+            if(data.image) {
+                document.getElementById("question").innerHTML = `<img src="${data.image}" alt="${data.image}" />`;
+                document.getElementById("op1").innerHTML = `<p>${data.options[0]}</p>`;
+                document.getElementById("op2").innerHTML = `<p>${data.options[1]}</p>`;
+                document.getElementById("op3").innerHTML = `<p>${data.options[2]}</p>`;
+            }
+
+            
+        }catch (err) {
+            console.error("Erro ao buscar questão:", err);
+        }
+    });
+</script>
+</body>
+</html>

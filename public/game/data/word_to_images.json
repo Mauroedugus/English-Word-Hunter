@@ -1,0 +1,48 @@
+[
+    {
+      "word": "cat",
+      "correct": "/assets/images/cat.png",
+      "options": [
+        "/assets/images/dog.png",
+        "/assets/images/cat.png",
+        "/assets/images/rabbit.png"
+      ]
+    },
+    {
+      "word": "banana",
+      "correct": "/assets/images/banana.png",
+      "options": [
+        "/assets/images/apple.png",
+        "/assets/images/orange.png",
+        "/assets/images/banana.png"
+      ]
+    },
+    {
+      "word": "bicycle",
+      "correct": "/assets/images/bicycle.png",
+      "options": [
+        "/assets/images/car.png",
+        "/assets/images/motorcycle.png",
+        "/assets/images/bicycle.png"
+      ]
+    },
+    {
+      "word": "tree",
+      "correct": "/assets/images/tree.png",
+      "options": [
+        "/assets/images/tree.png",
+        "/assets/images/flower.png",
+        "/assets/images/grass.png"
+      ]
+    },
+    {
+      "word": "house",
+      "correct": "/assets/images/house.png",
+      "options": [
+        "/assets/images/building.png",
+        "/assets/images/house.png",
+        "/assets/images/castle.png"
+      ]
+    }
+  ]
+  

@@ -1,0 +1,28 @@
+[
+    {
+      "image": "/assets/images/apple.png",
+      "correct": "apple",
+      "options": ["apple", "banana", "grape"]
+    },
+    {
+      "image": "/assets/images/dog.png",
+      "correct": "dog",
+      "options": ["dog", "cat", "bird"]
+    },
+    {
+      "image": "/assets/images/car.png",
+      "correct": "car",
+      "options": ["car", "bus", "bike"]
+    },
+    {
+      "image": "/assets/images/book.png",
+      "correct": "book",
+      "options": ["book", "pen", "notebook"]
+    },
+    {
+      "image": "/assets/images/sun.png",
+      "correct": "sun",
+      "options": ["moon", "sun", "star"]
+    }
+  ]
+  
