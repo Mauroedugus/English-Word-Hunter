@@ -15,23 +15,23 @@ export default class TitleScene extends Phaser.Scene {
         .setDisplaySize(gameWidth, gameHeight); // ajusta para a tela toda
 
         // Título do Jogo
-        this.add.text(centerX, gameHeight * 0.3, 'WORD HUNTER', { 
-            fontSize: '70px', 
-            fill: '#333', 
+        this.add.text(centerX, gameHeight * 0.15, 'WORD HUNTER', { 
+            fontSize: '80px', 
+            fill: '#FFFFFF', 
             fontFamily: 'Baloo Bhaina'
         }).setOrigin(0.5); // setOrigin(0.5) centraliza o ponto de âncora do texto
 
         // Subtítulo
-        this.add.text(centerX, gameHeight * 0.45, 'Aprenda Inglês de forma divertida!', { 
-            fontSize: '24px', 
-            fill: '#333',
+        this.add.text(centerX, gameHeight * 0.25, 'Aprenda Inglês de forma divertida!', { 
+            fontSize: '30px', 
+            fill: '#FFFFFF',
             fontFamily: 'Baloo Bhaina' 
         }).setOrigin(0.5);
 
         // Botão "COMEÇAR"
-        const buttonWidth = 400;
+        const buttonWidth = 450;
         const buttonHeight = 120;
-        const buttonY = gameHeight * 0.5;
+        const buttonY = gameHeight * 0.38;
 
         const startButton = this.add.container(centerX, buttonY);
 
