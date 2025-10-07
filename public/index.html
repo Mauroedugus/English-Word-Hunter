@@ -1,52 +1,38 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8" />
-<title>English Word Hunter</title>
-<script src="https://cdn.jsdelivr.net/npm/phaser@3.60.0/dist/phaser.min.js"></script>
-<link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8" />
+    <title>English Word Hunter</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaina&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/phaser@3.60.0/dist/phaser.min.js"></script>
+    <style>
+        html, body { /* <-- GARANTA QUE AMBOS OCUPEM A TELA TODA */
+        margin: 0; 
+        padding: 0;
+        height: 100%;
+        width: 100%;
+        overflow: hidden; /* Evita barras de rolagem indesejadas */
+        }
+        /* Estilos básicos para centralizar o jogo */
+        body { 
+            background-color: #2c3e50; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        /* O contêiner onde o Phaser irá renderizar o jogo (800x600) */
+        #game-container { 
+            width: 100vw; 
+            height: 100vh; 
+            box-shadow: 0 0 20px rgba(0,0,0,0.5);
+        }
+    </style>
 </head>
 <body>
-<header>
-    <h1>Bem Vindo ao Word Hunter</h1>
-</header>
-<main>
-    <button id="start-btn">Começar</button>
-    <pre id="output"></pre>
-
-    <div id="question"></div>
-    <div id="options">
-        <div id="op1"></div>
-        <div id="op2"></div>
-        <div id="op3"></div>
-    </div>
-</main>
-<script>
-    document.getElementById("start-btn").addEventListener("click", async () => {
-        try {
-            const response = await fetch("http://localhost:3000/api/easy/random-question");
-            const data = await response.json();
-
-            if(data.word) {
-                document.getElementById("question").innerHTML = `<p>${data.word}</p>`;
-                document.getElementById("op1").innerHTML = `<img src="${data.options[0]}" alt="${data.options[0]}" />`;
-                document.getElementById("op2").innerHTML = `<img src="${data.options[1]}" alt="${data.options[1]}" />`;
-                document.getElementById("op3").innerHTML = `<img src="${data.options[2]}" alt="${data.options[2]}" />`;
-                
-            }
-
-            if(data.image) {
-                document.getElementById("question").innerHTML = `<img src="${data.image}" alt="${data.image}" />`;
-                document.getElementById("op1").innerHTML = `<p>${data.options[0]}</p>`;
-                document.getElementById("op2").innerHTML = `<p>${data.options[1]}</p>`;
-                document.getElementById("op3").innerHTML = `<p>${data.options[2]}</p>`;
-            }
-
-            
-        }catch (err) {
-            console.error("Erro ao buscar questão:", err);
-        }
-    });
-</script>
+    <div id="game-container"></div> 
+    
+    <script type="module" src="game/main.js"></script> 
 </body>
 </html>

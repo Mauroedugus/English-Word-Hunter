@@ -2,7 +2,7 @@ const path = require("path");
 const fs = require("fs");
 
 function getRandomFromJson(fileName) {
-    const filePath = path.join("public/game/data", fileName);
+    const filePath = path.join(__dirname, "../..", "game/data", fileName);
     const rawData = fs.readFileSync(filePath);
     const jsonData = JSON.parse(rawData);
     const randomItem = jsonData[Math.floor(Math.random()* jsonData.length)];
